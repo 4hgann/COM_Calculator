@@ -6,36 +6,73 @@
 <link rel = "stylesheet" href = "style.css">
 <script src = "scripts.js"></script>
 <body>
-    
-    <form>
-        <div>
-            <div class = "formHeader">
-                <p class="formHeading">Add a component</p>
+
+    <div class ="COMDisplay">
+        <h1 class = "COMHeading">Center of Mass</h1>
+        <p class = "COM">(0,0,0)</p>
+    </div>
+
+    <div class = "bodyWrapper">
+
+        <form class = "mainEl">
+            <div>
+                <div class = "formHeader">
+                    <p class="formHeading">Add a component</p>
+                </div>
+
+                <div class = "fieldWrappers" id = 'fields'>
+                    <label for ="name">Component Name</label> <br/>
+                    <input type="text" id = "name" placeholder="Component Name e.g. Mast" name="componentName" required>
+
+                    <label for ="mass">Mass</label><br/>
+                    <input type="number" id = "mass" placeholder="Mass (kg)" name="mass" required>
+        
+                    <label for ="X_COM">Center of Mass (X)</label><br/>
+                    <input type="number" id = "X_COM" placeholder="COM in X dimension" name="X_COM" required>
+        
+                    <label for ="Y_COM">Center of Mass (Y)</label><br/>
+                    <input type="number" id = "Y_COM" placeholder="COM in Y dimension" name="Y_COM" required>
+
+                    <label for ="Z_COM">Center of Mass (Z)</label><br/>
+                    <input type="number" id = "Z_COM" placeholder="COM in Z dimension" name="Z_COM" required>
+                </div>
+
+                <div class = "submitWrapper" id = 'button'>
+                    <button class = "submit" onclick="addComponent()">Submit Component</button>
+                </div>
             </div>
+        </form>
+        
+        <form class = "mainEl">
+            <div>
+                <div class = "formHeader">
+                    <p class="formHeading">Edit a component</p>
+                </div>
 
-            <div class = "fieldWrappers" id = 'fields'>
-                <label for ="name">Component Name</label> <br/>
-                <input type="text" placeholder="Component Name e.g. Mast" name="componentName" required>
+                <div class = "fieldWrappers" id = 'fields'>
+                    <label for ="name">Component Name</label> <br/>
+                    <input type="text" id = "nameEdit" placeholder="Component Name e.g. Mast" name="componentName" required>
 
-                <label for ="mass">Mass</label><br/>
-                <input type="number" placeholder="Mass (kg)" name="mass" required>
-    
-                <label for ="X_COM">Center of Mass (X)</label><br/>
-                <input type="number" placeholder="COM in X dimension" name="X_COM" required>
-    
-                <label for ="Y_COM">Center of Mass (Y)</label><br/>
-                <input type="number" placeholder="COM in Y dimension" name="Y_COM" required>
+                    <label for ="mass">Mass</label><br/>
+                    <input type="number" id ="massEdit" placeholder="Mass (kg)" name="mass" required>
+        
+                    <label for ="X_COM" >Center of Mass (X)</label><br/>
+                    <input type="number" id ="X_COMEdit" placeholder="COM in X dimension" name="X_COM" required>
+        
+                    <label for ="Y_COM">Center of Mass (Y)</label><br/>
+                    <input type="number" id = "Y_COMEdit" placeholder="COM in Y dimension" name="Y_COM" required>
 
-                <label for ="Z_COM">Center of Mass (Z)</label><br/>
-                <input type="number" placeholder="COM in Z dimension" name="Z_COM" required>
+                    <label for ="Z_COM">Center of Mass (Z)</label><br/>
+                    <input type="number" id ="Z_COMEdit" placeholder="COM in Z dimension" name="Z_COM" required>
+                </div>
+
+                <div class = "submitWrapper" id = 'button'>
+                    <button class = "submit" onclick="addComponent()">Edit Component</button>
+                </div>
             </div>
+        </form>
 
-            <div class = "submitWrapper custom-background-color" id = 'button'>
-                <button class = "submit" onclick="addComponent()">Submit Component</button>
-            </div>
-
-        </div>
-    </form>
+    </div>
 
 </body>
 
