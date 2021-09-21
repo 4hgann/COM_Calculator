@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>ETNZ - COM Calculator</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel = "stylesheet" href = "style.css">
+<script src = "scripts.js"></script>
+<body>
+    
+    <form>
+        <div>
+            <div class = "formHeader">
+                <p class="formHeading">Add a component</p>
+            </div>
+
+            <div class = "fieldWrappers" id = 'fields'>
+                <label for ="name">Component Name</label> <br/>
+                <input type="text" placeholder="Component Name e.g. Mast" name="componentName" required>
+
+                <label for ="mass">Mass</label><br/>
+                <input type="number" placeholder="Mass (kg)" name="mass" required>
+    
+                <label for ="X_COM">Center of Mass (X)</label><br/>
+                <input type="number" placeholder="COM in X dimension" name="X_COM" required>
+    
+                <label for ="Y_COM">Center of Mass (Y)</label><br/>
+                <input type="number" placeholder="COM in Y dimension" name="Y_COM" required>
+
+                <label for ="Z_COM">Center of Mass (Z)</label><br/>
+                <input type="number" placeholder="COM in Z dimension" name="Z_COM" required>
+            </div>
+
+            <div class = "submitWrapper custom-background-color" id = 'button'>
+                <button class = "submit" onclick="addComponent()">Submit Component</button>
+            </div>
+
+        </div>
+    </form>
+
+</body>
+
+
+</html>

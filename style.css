@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+body{
+    font-family: Roboto, sans-serif;
+}
+
+.formHeader,.submitWrapper{
+    width:35%;
+    padding: 0px 30px;
+    margin:auto;
+    position:relative;
+}
+
+.formHeading{
+    font-family: 'Open Sans', sans-serif;
+    font-size:24pt;
+    padding: 15px 10px;
+    color:#fff;
+    text-align: center;
+    margin:auto;
+}
+
+.popupWrapper{
+
+    margin:auto;
+}
+
+.modal{
+    align-items: center;
+    justify-content: center;
+    display: none; /*The popup will start as hidden, this property will be edited in javascript when the trigger button is clicked*/
+    left: 0;
+    top: 0;
+    position: fixed;
+    height:100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(50,50,50,0.9);
+}
+
+.fieldWrappers{
+    padding: 20px 30px;
+    background-color: #fff;
+    width:35%;
+    margin:auto;
+    margin-bottom: 0px;
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+    display: inline-block;
+    background: #fff;
+    color:#000;
+    font-size:12pt;
+  }
+
+.exit {
+    position: absolute;
+    top:-10px;
+    right:7px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #fff;
+    padding:0px;
+    margin:auto;
+  }
+
+  label{
+      font-size: 12pt;
+      color:#000;
+  }
+
+.submit{
+    text-align: center;
+    font-size:20pt;
+    width:100%;
+}
