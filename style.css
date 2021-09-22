@@ -21,6 +21,17 @@ button{
     flex-direction: row;
 }
 
+.editButtonWrapper{
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.editButton{
+    margin: auto 20px;
+}
+
 .smallButton{
     margin: auto 10px;
     font-size: 12pt;
