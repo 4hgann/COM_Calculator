@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel = "stylesheet" href = "style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script src = "./script.js" type = "module"></script>
 <body>
 
@@ -57,7 +58,7 @@
             </div>
       
             <div class ="buttonWrapper">
-              <button id="clickedBtn">Submit Component</button>
+              <button id="addButton">Submit Component</button>
             </div>
           </div>
 
@@ -67,6 +68,19 @@
             </div>
       
             <div class="fieldWrappers">
+            <label for ="Select">Find a component</label><br/>
+              <div class ="findWrapper">
+
+
+                <input
+                type="text"
+                placeholder="Insert the name"
+                id="findEdit"
+                required
+                />
+                <button id="findButton" class ="smallButton">Find</button>
+              </div>
+
               <label for="name">Component Name</label> <br />
               <input
                 type="text"
@@ -104,7 +118,7 @@
             </div>
       
             <div class ="buttonWrapper">
-              <button id="clickedBtn">Submit Edit</button>
+              <button id="editButton">Submit Edit</button>
             </div>
           </div>
         
