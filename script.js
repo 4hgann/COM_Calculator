@@ -30,9 +30,15 @@ function deleteComponent(name){
     //On click, get the name of the component to be deleted
     //Then find the position in the array and cut it out
     let position = findPosition(oldName);
-    array.splice(position, 1);
-    console.log(JSON.stringify(array));
-    calculateCOM();
+    if(position != -1){
+        array.splice(position, 1);
+        console.log(JSON.stringify(array));
+        calculateCOM();
+    }
+    else{
+        document.getElementById('findEdit').value = "Delete failed - Not found";
+    }
+    clearEdit();
 }
 
 function findPosition(name){
@@ -53,17 +59,18 @@ function calculateCOM(){
     
         for (let i = 0; i < array.length; i++){
             totalMass += array[i].mass;
+            console.log(array[i].mass);
             weightedX += array[i].mass * array[i].X_COM;
             weightedY += array[i].mass * array[i].Y_COM;
             weightedZ += array[i].mass * array[i].Z_COM;
         }
-        console.log(totalMass);
-        console.log(weightedX);
         //COM in each dimension is the weighted / the total mass. This is directly put into innerHTML and displayed
-        document.getElementById('COM').innerHTML = "(" + (weightedX/totalMass).toFixed(1) + "," + (weightedY/totalMass).toFixed(1) + "," +(weightedZ/totalMass).toFixed(1) + ")";
+        document.getElementById('COM').innerHTML = "Center of Mass: (" + (weightedX/totalMass).toFixed(1) + "," + (weightedY/totalMass).toFixed(1) + "," +(weightedZ/totalMass).toFixed(1) + ")";
+        document.getElementById('massHeader').innerHTML = "Total Mass: " + totalMass + " Kg";
     }
     else{
-        document.getElementById('COM').innerHTML = "(0,0,0)";
+        document.getElementById('COM').innerHTML = "Center of Mass: (0,0,0)";
+        document.getElementById('massHeader').innerHTML = "Total Mass: 0 Kg";
     }
 
 }
@@ -80,11 +87,7 @@ function autoFill(){
     }
     else{
         document.getElementById('findEdit').value = 'Not Found';
-        document.getElementById('nameEdit').value = '';
-        document.getElementById('massEdit').value = '';
-        document.getElementById('X_COMEdit').value = '';
-        document.getElementById('Y_COMEdit').value = '';
-        document.getElementById('Z_COMEdit').value = '';
+        clearEdit();
     }
 
 
@@ -94,16 +97,26 @@ function editComponent(){
     let index = findPosition(oldName);
 
     if(index != -1){
+        document.getElementById('findEdit').value = "Successful Edit"
         array[index].name = document.getElementById('nameEdit').value;
-        array[index].mass = document.getElementById('massEdit').value ;
-        array[index].X_COM = document.getElementById('X_COMEdit').value
-        array[index].Y_COM = document.getElementById('Y_COMEdit').value;
-        array[index].Z_COM = document.getElementById('Z_COMEdit').value;
+        array[index].mass = parseFloat(document.getElementById('massEdit').value) ;
+        array[index].X_COM = parseFloat(document.getElementById('X_COMEdit').value);
+        array[index].Y_COM = parseFloat(document.getElementById('Y_COMEdit').value);
+        array[index].Z_COM = parseFloat(document.getElementById('Z_COMEdit').value);
     }
     else{
         document.getElementById('findEdit').value = "Edit failed - Not found";
     }
     console.log(JSON.stringify(array));
     calculateCOM();
+    clearEdit();
 
+}
+
+function clearEdit(){
+    document.getElementById('nameEdit').value = '';
+    document.getElementById('massEdit').value = '';
+    document.getElementById('X_COMEdit').value = '';
+    document.getElementById('Y_COMEdit').value = '';
+    document.getElementById('Z_COMEdit').value = '';
 }
