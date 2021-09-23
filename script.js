@@ -60,7 +60,7 @@ function calculateCOM(){
         console.log(totalMass);
         console.log(weightedX);
         //COM in each dimension is the weighted / the total mass. This is directly put into innerHTML and displayed
-        document.getElementById('COM').innerHTML = "(" + Math.floor(weightedX/totalMass) + "," + Math.floor(weightedY/totalMass) + "," + Math.floor(weightedZ/totalMass) + ")";
+        document.getElementById('COM').innerHTML = "(" + (weightedX/totalMass).toFixed(1) + "," + (weightedY/totalMass).toFixed(1) + "," +(weightedZ/totalMass).toFixed(1) + ")";
     }
     else{
         document.getElementById('COM').innerHTML = "(0,0,0)";
